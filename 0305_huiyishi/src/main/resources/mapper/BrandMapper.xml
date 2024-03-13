@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msr.mapper.BrandMapper">
+
+    <select id="selectAll" resultType="com.msr.bean.Brand">
+        select * from huiyishi ORDER BY destine_time DESC;
+    </select>
+
+    <select id="selectName" resultType="java.lang.String">
+        select DISTINCT room_name from huiyishi
+    </select>
+
+    <insert id="add">
+        insert into huiyishi values(null,#{room_name},#{destine_time},#{destine_name})
+    </insert>
+</mapper>

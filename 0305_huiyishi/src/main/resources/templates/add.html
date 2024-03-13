@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>预定会议室</h1>
+    <form action="/add" method="post">
+        会议室名称：<select name="room_name">
+            <option th:each="name, iter:${nameList}" th:value="${name}">[[${name}]]</option>
+        </select><br/>
+        预定日期：<input id="date" type="date" name="destine_time" required /><br/>
+        预定者：<input  id="name" type="text" name="destine_name" required /><br/>
+        <input type="submit" value="预定" />
+        <input type="reset" value="重置" />
+    </form>
+</body>
+</html>
